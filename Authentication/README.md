@@ -9,13 +9,10 @@
   ```
 ## .env in the root:
   ```bash
-  MONGO = 'mongodb+srv://namisa:244466666@auth.d1zmqbi.mongodb.net/?retryWrites=true&w=majority&appName=auth'
+  MONGO = 'mongodb+srv://ahmedalfey:sani9999@hackathon.rflqj.mongodb.net/UserDB?retryWrites=true&w=majority'
   JWT_SECRET = 'ivadhfvuiadhfviahuivyfvIEYR8AYB'  
   ```
 ## .env in the client:
   ```bash
   VITE_FIREBASE_API_KEY = "AIzaSyBgZ6unZvCYpnqGeSCtxdg8KvHPvmY38eU"
   ```
-## Link: 
-deployed with (render.com)
-[Authentication](https://authentication-2-tzt5.onrender.com/)
