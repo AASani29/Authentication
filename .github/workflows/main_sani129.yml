@@ -1,4 +1,7 @@
-name: Build and deploy Node.js app to Azure Web App - Sani129
+# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
+# More GitHub Actions for Azure: https://github.com/Azure/actions
+
+name: Build and deploy Node.js app to Azure Web App - SANI129
 
 on:
   push:
@@ -20,14 +23,8 @@ jobs:
         with:
           node-version: '22.x'
 
-      # List contents of the Authentication directory to verify the structure
-      - name: List contents of Authentication directory
-        run: |
-          ls -l Authentication
-
       - name: npm install, build, and test
         run: |
-          cd Authentication  # Ensure we're in the correct directory
           npm install
           npm run build --if-present
           npm run test --if-present
@@ -59,18 +56,19 @@ jobs:
 
       - name: Unzip artifact for deployment
         run: unzip release.zip
-
+      
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_BAE3B6B1D0DC454BB8F061CDDC96DF6A }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_AFC5A493F1A54EF4AFBECD268F58F362 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_16003542ECEA4DAA83639D61ED1C21B5 }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_2A3FC4F87FE441E08EA1D18ADD15629A }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_FBE60D14DD3A4C63889CA6C517493589 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_84A86A85584549D3826AB3AF60D4C081 }}
 
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
-          app-name: 'Sani129'
+          app-name: 'SANI129'
           slot-name: 'Production'
           package: .
+          
